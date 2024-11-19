@@ -80,7 +80,7 @@ function display() {
   // delete icon
   const deleteIcon = document.createElement("img");
   deleteIcon.classList.add("deleteIcon");
-  deleteIcon.setAttribute("src", "/Images/delete.svg");
+  deleteIcon.setAttribute("src", "Images/delete.svg");
   deleteIcon.setAttribute("title", "Delete");
   taskDiv.appendChild(deleteIcon);
 

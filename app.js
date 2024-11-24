@@ -132,3 +132,15 @@ function display() {
 }
 
 
+// Burger menu
+const burgerMenu = document.querySelector(".burgerMenu");
+const sidebar = document.querySelector(".sidebar");
+const closeIcon = document.querySelector('.closeIcon');
+
+burgerMenu.addEventListener('click', () => {
+  sidebar.classList.add('sidebarActive');
+});
+
+closeIcon.addEventListener('click', () => {
+  sidebar.classList.remove('sidebarActive');
+});

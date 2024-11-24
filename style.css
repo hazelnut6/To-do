@@ -21,7 +21,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 350px 3fr;
+    grid-template-columns: 350px 1fr;
     grid-template-rows: 100px 3fr;
 }
 
@@ -40,6 +40,10 @@ header p {
     font-size: 3rem;
 }
 
+.burgerMenu {
+    display: none;
+}
+
 .sidebar {
     grid-column: 1/2;
     grid-row: 2/-1;
@@ -48,6 +52,10 @@ header p {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.closeSide {
+    display: none;
 }
 
 .inputs {
@@ -86,9 +94,6 @@ form {
 .inputLabel {
     grid-column: 1/1;
     grid-row: 2/3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #inputBar {
@@ -139,7 +144,7 @@ form {
     gap: 5px;
 }
 
-input[name = "highlight"] {
+input[name = 'highlight'] {
     width: 4vw;
     padding: 5px;
     border-style: none;
@@ -148,11 +153,11 @@ input[name = "highlight"] {
     border-radius: 5px;
 }
 
-input[name = "highlight"]:hover{
+input[name = 'highlight']:hover{
     background-color: white;
 }
 
-input[name = "pastel"] {
+input[name = 'pastel'] {
     width: 8vw;
     padding: 5px;
     border-style: none;
@@ -161,7 +166,7 @@ input[name = "pastel"] {
     border-radius: 5px;
 }
 
-input[name = "pastel"]:hover {
+input[name = 'pastel']:hover {
     background-color: white;
 }
 
@@ -185,8 +190,6 @@ input[name = "pastel"]:hover {
 
 .top {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
 }
 
 .taskSec {
@@ -240,6 +243,113 @@ input[name = "pastel"]:hover {
 }
 
 
+/* Media queries */
+
+/* Small */
+@media only screen and (max-width: 600px) {
+    /* Header */
+    header {
+        height: 12vh;
+        width: 100vw;
+        position: fixed;
+        justify-content: space-between;
+        padding: 0px 10px;
+    }
+
+    header p {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        height: 100dvh;
+        height: 100vh;
+        width: 100vw;
+        left: 450px;
+        position: fixed;
+        padding: 0px 10px;
+    }
+
+    .sidebarActive {
+        left: 0px;
+    }
+
+    .closeSide {
+        display: block;
+        height: 12vh;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        /* border: 1px solid black; */
+    }
+
+    .closeIcon {
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    form {
+        grid-template-columns: 100px 240px;
+    }
+
+    #addBtn {
+        padding: 10px 20px;
+    }
+
+    input[name = 'highlight'] {
+        width: 30vw;
+    }
+
+    input[name = 'pastel'] {
+        width: 30vw;
+    }
+
+    .note {
+        margin-top: 20px;
+    }
+
+    /* Main */
+    .main {
+        margin-top: 12vh;
+    }
+
+    .taskSec {
+        grid-template-columns: repeat(auto-fit, 345px);
+    }
+
+    .taskDiv {
+        height: 130px;
+        width: inherit;
+        grid-template-columns: 35px 225px 35px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium */
+/* @media only screen and (600px <= width <= 992px){
+    .sidebar {
+        background-color: cornflowerblue;
+    }
+} */
+
+/* Large */
+/* @media only screen and (width >= 1000px){
+    .sidebar {
+        background-color: beige;
+    }
+} */
 
 
 
